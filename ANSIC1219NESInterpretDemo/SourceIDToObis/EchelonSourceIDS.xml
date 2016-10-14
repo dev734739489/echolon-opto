@@ -54,7 +54,7 @@
     <OBISOffset>1.8.</OBISOffset>
     <OBISOffsetSelfRead>1.8.</OBISOffsetSelfRead>
     <OBISOffsetDemand>1.6.</OBISOffsetDemand>
-    <Unit>kW</Unit>
+    <Unit>kWh</Unit>
     <UnitSelfRead>kWh</UnitSelfRead>
     <UnitDemand>kW</UnitDemand>
     <Divisor>1000</Divisor>
@@ -64,7 +64,7 @@
     <OBISOffset>2.8.</OBISOffset>
     <OBISOffsetSelfRead>2.8.</OBISOffsetSelfRead>
     <OBISOffsetDemand>2.6.</OBISOffsetDemand>
-    <Unit>kW</Unit>
+    <Unit>kWh</Unit>
     <UnitSelfRead>kWh</UnitSelfRead>
     <UnitDemand>kW</UnitDemand>
     <Divisor>1000</Divisor>
@@ -72,14 +72,14 @@
   <DefElem>
     <SourceID>2</SourceID>
     <OBISOffset>3.8.</OBISOffset>
-    <Unit>Varh</Unit>
-    <Divisor>1</Divisor>
+    <Unit>Kvarh</Unit>
+    <Divisor>1000</Divisor>
   </DefElem>
   <DefElem>
     <SourceID>3</SourceID>
     <OBISOffset>4.8.</OBISOffset>
-    <Unit>Varh</Unit>
-    <Divisor>1</Divisor>
+    <Unit>Kvarh</Unit>
+    <Divisor>1000</Divisor>
   </DefElem>
   <DefElem>
     <SourceID>4</SourceID>
