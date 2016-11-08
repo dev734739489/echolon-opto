@@ -129,32 +129,38 @@ namespace ANSIC1219NESInterpret
                 {
                     UInt32 value = BitConverter.ToUInt32(data, offset + i * bt21.DmdRcd + hOffset);
                     IDefElem def = Interpreter.DefElemHandler.Get(-100);
-                    if (def == null)
-                        continue;
-                    double dv = value / def.Divisor;
-                    AddResultElem(new ResultElem(def, "-100") { Value = dv.ToString().Replace(",", ".") });
+                    if (def != null)
+                    {
+                        //continue;
+                        double dv = value / def.Divisor;
+                        AddResultElem(new ResultElem(def, "-100") { Value = dv.ToString().Replace(",", ".") });
+                    }
                     hOffset += 4;
                 }
                 if (bt21.ContinuousCumulativeDemand)
                 {
                     UInt32 value = BitConverter.ToUInt32(data, offset + i * bt21.DmdRcd + hOffset);
                     IDefElem def = Interpreter.DefElemHandler.Get(-101);
-                    if (def == null)
-                        continue;
-                    double dv = value / def.Divisor;
-                    AddResultElem(new ResultElem(def, "-101") { Value = dv.ToString().Replace(",", ".") });
+                    if (def != null)
+                    {
+                        //continue;
+                        double dv = value / def.Divisor;
+                        AddResultElem(new ResultElem(def, "-101") { Value = dv.ToString().Replace(",", ".") });
+                    }
                     hOffset += 4;
                 }
                 for (int j = 0; j < bt21.NumberOfOccurrences; j++)
                 {
                     UInt32 value = BitConverter.ToUInt32(data, offset + i * bt21.DmdRcd + hOffset + j * 4);
                     IDefElem def = Interpreter.DefElemHandler.Get(bt22.DemandSelect[i]);
-                    if (def == null)
-                        continue;
-                    ResultElem elem = new ResultElem(def, i.ToString());
-                    elem.Obis = def.OBISOffsetDemand + tarif;
-                    elem.Value = value.ToString();
-                    AddResultElem(elem);
+                    if (def != null)
+                    {
+                        //continue;
+                        ResultElem elem = new ResultElem(def, i.ToString());
+                        elem.Obis = def.OBISOffsetDemand + tarif;
+                        elem.Value = value.ToString();
+                        AddResultElem(elem);
+                    }
                     hOffset += 4;
                 }
             }
@@ -163,15 +169,15 @@ namespace ANSIC1219NESInterpret
         protected void InterpretBlock(byte[] data, int offset)
         {
             //Summations
-            InterpretSummations(data, bt21.A, "0");
+            InterpretSummations(data, offset + bt21.A, "0");
             //Demands
-            InterpretDemands(data, bt21.B, "0");
+            InterpretDemands(data, offset + bt21.B, "0");
             //Coincidents
-            InterpretCoincidents(data, bt21.C, "0");
+            InterpretCoincidents(data, offset + bt21.C, "0");
             ////diese sollten gar nicht vorkommen
             for (int i = 0; i < bt21.NumberOfTiers; i++)
             {
-                int hOffset = bt21.D + i * bt21.DataBlockLength;
+                int hOffset = offset + bt21.D + i * bt21.DataBlockLength;
                 InterpretSummations(data, hOffset, (i + 1).ToString());
                 hOffset += 4 * bt21.NumberOfSummation;
                 InterpretDemands(data, hOffset, (i + 1).ToString());
