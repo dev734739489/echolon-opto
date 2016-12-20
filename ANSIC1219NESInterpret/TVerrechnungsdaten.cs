@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ANSIC1219NESInterpret.InterpretDef;
+using System.Globalization;
 
 namespace ANSIC1219NESInterpret
 {
@@ -156,9 +157,15 @@ namespace ANSIC1219NESInterpret
                     if (def != null)
                     {
                         //continue;
+                        //SRS 2016.12.20: Divisor beachten
+                        double dv = value / def.Divisor;
+
                         ResultElem elem = new ResultElem(def, i.ToString());
                         elem.Obis = def.OBISOffsetDemand + tarif;
-                        elem.Value = value.ToString();
+                        //SRS 2016.12.20: Unit beachten
+                        elem.Unit = def.UnitDemand;
+                        //SRS 2016.12.20: Ausgabe des Doublewertes
+                        elem.Value = dv.ToString(CultureInfo.InvariantCulture);
                         AddResultElem(elem);
                     }
                     hOffset += 4;
