@@ -38,7 +38,7 @@ namespace ANSIC1219NESInterpret.InterpretDef
             {
                 System.Xml.Serialization.XmlSerializer Serializer = new System.Xml.Serialization.XmlSerializer(DefListe.GetType());
                 {
-                    using (FileStream fs = new FileStream(datei, FileMode.OpenOrCreate))
+                    using (FileStream fs = new FileStream(datei, FileMode.Open))
                     {
                         using (TextReader reader = new StreamReader(fs))
                         {

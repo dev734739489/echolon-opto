@@ -1,0 +1,7 @@
+C:\GIT\echolon-opto\ANSIC1219NESInterpret\bin\Debug\Definitions\EchelonSourceIDS.xml
+C:\GIT\echolon-opto\ANSIC1219NESInterpret\bin\Debug\ANSIC1219NESInterpret.dll
+C:\GIT\echolon-opto\ANSIC1219NESInterpret\bin\Debug\ANSIC1219NESInterpret.pdb
+C:\GIT\echolon-opto\ANSIC1219NESInterpret\bin\Debug\Newtonsoft.Json.dll
+C:\GIT\echolon-opto\ANSIC1219NESInterpret\obj\Debug\ANSIC1219NESInterpret.csprojResolveAssemblyReference.cache
+C:\GIT\echolon-opto\ANSIC1219NESInterpret\obj\Debug\ANSIC1219NESInterpret.dll
+C:\GIT\echolon-opto\ANSIC1219NESInterpret\obj\Debug\ANSIC1219NESInterpret.pdb

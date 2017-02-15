@@ -43,7 +43,8 @@ namespace ANSIC1219NESInterpret
                     //und noch ein check
                     if (Length != Rohdaten.Length - 2)
                     {
-                        throw new Exception("Length != Rohdaten.Length");
+                        continue;
+                        //throw new Exception("Length != Rohdaten.Length");
                     }
                     byte ResetReason = Rohdaten[offset]; offset++;
                     AddResultElem(new ResultElem() { Obis = "ResetReason", Value = ResetReason.ToString() });

@@ -27,12 +27,14 @@ namespace ANSIC1219NESInterpret
             Add(new BT1());
             //das ist new Macke
             Tables.Add(3,Tables[1]);
+
             //Add(new BT3());
             Add(new BT20());
             Add(new BT21());
             Add(new BT22());
             Add(new BT23());
             Add(new BT26());
+            Add(new BT2600());//bt26Start PartialRead(0x001A, 0, 6)
             Add(new BT61());
             Add(new BT62());
             Add(new BT63());
@@ -41,11 +43,14 @@ namespace ANSIC1219NESInterpret
             Add(new BT65());
             Add(new BT66());
             Add(new BT67());
-          
+
+            
             Add(new ET3());
             Add(new ET21());
             Add(new ET36());
             Add(new ET41());
+            Add(new ET4100());//et41Start PartialRead(0x0829, 0, 6)
+            Add(new ET4199());//et36Entry fault
             Add(new ET42());
             Add(new ET66());
         }
@@ -122,6 +127,8 @@ namespace ANSIC1219NESInterpret
             try
             {
                 JObject result = ParseJsonString(data);
+                //Tables[21].Interpret(this);
+                //Tables[36 + ET.ETOffset].Interpret(this);
                 Tables[23].Interpret(this);
                 return Tables[23] as IVerrechnungsdaten;
             }
@@ -136,6 +143,7 @@ namespace ANSIC1219NESInterpret
             try
             {
                 JObject result = ParseJsonString(data);
+                Tables[36 + ET.ETOffset].Interpret(this);
                 Tables[41 + ET.ETOffset].Interpret(this);
                 return Tables[41 + ET.ETOffset] as IVerrechnungsdaten;
             }

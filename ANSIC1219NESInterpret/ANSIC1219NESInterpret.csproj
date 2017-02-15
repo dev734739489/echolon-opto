@@ -12,14 +12,10 @@
     <AssemblyName>ANSIC1219NESInterpret</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -58,6 +54,7 @@
     <Compile Include="BT22.cs" />
     <Compile Include="BT23.cs" />
     <Compile Include="BT26.cs" />
+    <Compile Include="BT2600.cs" />
     <Compile Include="BT3.cs" />
     <Compile Include="BT61.cs" />
     <Compile Include="BT62.cs" />
@@ -67,12 +64,13 @@
     <Compile Include="BT66.cs" />
     <Compile Include="BT67.cs" />
     <Compile Include="BTable.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ET.cs" />
     <Compile Include="ET21.cs" />
     <Compile Include="ET3.cs" />
     <Compile Include="ET36.cs" />
     <Compile Include="ET41.cs" />
+    <Compile Include="ET4100.cs" />
+    <Compile Include="ET4199.cs" />
     <Compile Include="ET42.cs" />
     <Compile Include="ET66.cs" />
     <Compile Include="HelperFunctions.cs" />
